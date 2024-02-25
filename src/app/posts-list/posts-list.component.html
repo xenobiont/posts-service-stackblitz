@@ -1,0 +1,14 @@
+<h2>Posts</h2>
+
+<ul>
+	@for (post of posts$ | async; track post.id) {
+		<li>
+      @for (property of post | keyvalue; track $index) {
+        <li>
+          <span style="font-weight: bold">{{ property.key }}</span
+          >: <span>{{ property.value }}</span>
+        </li>
+      }
+    </li>
+	}
+</ul>
